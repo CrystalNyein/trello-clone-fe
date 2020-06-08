@@ -4,10 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trello</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css">
 </head>
 <body>
-    
+    <div class="bg-wrapper">
+        <div class="nav1">
+            <div class="nav-flex">
+                <a href="#"><i class="fas fa-th"></i></a>
+                <a href="#"><i class="fas fa-home"></i></a>
+                <a href="#"><i class="far fa-clipboard"></i>&nbsp;&nbsp; Boards</a>
+                <a href="#" id="search"><input type="text" id="search-trello" placeholder="&#xf002;"><span id="pin-btn"> </span><span id="cross-btn"> </span></a>
+            </div>
+            <div class="nav-flex logo">
+                <a href="#"><i class="far fa-clipboard"></i> Trello</a>
+            </div>
+            <div class="nav-flex">
+                <a href="#"><i class="fas fa-plus"></i></a>
+                <a href="#"><i class="fas fa-info-circle"></i></a>
+                <a href="#"><i class="far fa-bell"></i></a>
+                <img src="assets/Nyein.jpg" alt="Avatar" class="avatar"> 
+            </div>
+        </div>
+        <div class="nav2">
+            <div class="nav-flex">
+                <h2>FE - Common</h2>
+                <a href="#"><i class="far fa-star"></i></a> | 
+                <p>Private Team</p> | 
+                <a href="#"><i class="fas fa-user-friends"></i>&nbsp; Team Visible</a> |
+                <img src="assets/Nyein.jpg" alt="Avatar" class="avatar">
+                <a href="#">Invite</a>
+            </div>
+            <div class="nav-flex">
+                <a href="#"><i class="fas fa-concierge-bell"></i>&nbsp; Butler (2 Tips)</a>
+                <a href="#"><i class="fas fa-ellipsis-h"></i>&nbsp; Show Menu</a>
+            </div>
+        </div>
+        <div class="content-wrapper" id="content">
+            <div class="list">
+                <div class="title">
+                    <h3>Nyein - Doing</h3>
+                    <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <hr>
+                        <h4>HTML/CSS</h4>
+                        <div class="info"></div>
+                        <div class="avatar"></div>
+                    </div>
+                </div>
+                <div class="add-card"><p>+&nbsp; Add another card</p><a href="#"><i class="fas fa-folder-plus"></i></a></div>
+            </div>
+            <div class="list">
+                <div class="title">
+                    <h3>Nyein - Done</h3>
+                    <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <hr>
+                        <h4>HTML/CSS</h4>
+                        <div class="info"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    <div class="card">
+                        <hr>
+                        <h4>HTML/CSS</h4>
+                        <div class="info"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    <div class="card">
+                        <hr>
+                        <h4>HTML/CSS</h4>
+                        <div class="info"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    <div class="card">
+                        <hr>
+                        <h4>HTML/CSS</h4>
+                        <div class="info"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    <div class="card">
+                        <hr>
+                        <h4>HTML/CSS</h4>
+                        <div class="info"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    <div class="card">
+                        <hr>
+                        <h4>HTML/CSS</h4>
+                        <div class="info"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    
+                </div>
+                <div class="add-card"><p>+&nbsp; Add another card</p><a href="#"><i class="fas fa-folder-plus"></i></a></div>
+            </div>
+        </div>
+    </div>
     <script src="js/index.js"></script>
 </body>
 </html>
