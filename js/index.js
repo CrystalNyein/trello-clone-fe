@@ -2,6 +2,18 @@ const endpoint="http://localhost:8082/";
 const searchBtn=document.getElementById("search-trello");
 const pin=document.getElementById("pin-btn");
 const cross=document.getElementById("cross-btn");
+var lists=[];
+window.onload=()=>fetchData();
+function fetchData(){
+    fetch(endpoint+"list")
+    .then(resp=> resp.json())
+    .then(data=>{
+        lists=data;
+        console.log(data);
+        console.log(lists[0].cards[0].title);
+    })
+    .catch(err=>console.log(err));
+}
 searchBtn.addEventListener("focus",(event)=>{
     pin.className="pin";
     cross.className="cross";
@@ -19,15 +31,3 @@ searchBtn.addEventListener("blur",(event)=>{
     cross.classList.remove("cross");
     console.log("blur");
 })
-pin.addEventListener("click",(event)=>{
-    console.log("Pin is clicked.")
-})
-
-(()=>{
-    fetch(endpoint+"account")
-    .then(resp=> resp.json())
-    .then(data=>{
-        console.log(data);
-    })
-    .catch(err=>console.log(err));
-})();
