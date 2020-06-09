@@ -1,7 +1,8 @@
 const endpoint="http://localhost:8082/";
 const searchBtn=document.getElementById("search-trello");
-const pin=document.getElementById("pin-btn");
 const cross=document.getElementById("cross-btn");
+const content= document.getElementById("content");
+
 var lists=[];
 window.onload=()=>fetchData();
 function fetchData(){
@@ -9,25 +10,45 @@ function fetchData(){
     .then(resp=> resp.json())
     .then(data=>{
         lists=data;
-        console.log(data);
-        console.log(lists[0].cards[0].title);
+        var list=lists.map((list)=>getLists(list)).join("");
+        content.innerHTML=list;
     })
     .catch(err=>console.log(err));
 }
+function addCard(){
+    return `<div class="add-card"><p>+&nbsp; Add another card</p><a href="#"><i class="fas fa-folder-plus"></i></a></div></div>`;
+}
+
+function getLabel(label){
+    return `<hr style="background-color:${label.color}">`;
+}
+
+function getCards(card){
+    const labelStr= card.labels.map((label)=>getLabel(label)).join("");
+    return `<div class="card">${labelStr}
+    <span class="edit-card"></span>
+    <h4>${card.title}</h4>
+    <div class="info"></div>
+    <div class="avatar"></div>
+</div>`;
+}
+function getLists(list){
+    const cardStr= list.cards.map((card)=>getCards(card,list)).join("");
+    return `<div class="list"><div class="title">
+    <h3>${list.title}</h3>
+    <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+    </div><div class="cards">
+    ${cardStr}
+    </div>`+addCard();
+}
+
 searchBtn.addEventListener("focus",(event)=>{
-    pin.className="pin";
     cross.className="cross";
     console.log("focused");
 })
 
-function close(){
-    console.log("pinned");
-    searchBtn.blur();
-    pin.classList.remove("pin");
-    cross.classList.remove("cross");
-}
+
 searchBtn.addEventListener("blur",(event)=>{
-    pin.classList.remove("pin");
     cross.classList.remove("cross");
     console.log("blur");
 })
