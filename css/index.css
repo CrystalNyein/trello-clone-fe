@@ -28,6 +28,46 @@
 a {
     text-decoration: none;
 }
+  .preloader-1 {
+    margin: 0 auto 0;
+    height: 15px;
+  }
+
+.preloader-1 .line {
+    padding: 1px;
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  margin: 10px 1px;
+  display: inline-block;
+  animation: opacity-2 1000ms infinite ease-in-out;
+}
+
+
+.preloader-1 .line-1 { animation-delay: 800ms; }
+.preloader-1 .line-2 { animation-delay: 600ms; }
+.preloader-1 .line-3 { animation-delay: 400ms; }
+.preloader-1 .line-4 { animation-delay: 200ms; }
+.preloader-1 .line-6 { animation-delay: 200ms; }
+.preloader-1 .line-7 { animation-delay: 400ms; }
+.preloader-1 .line-8 { animation-delay: 600ms; }
+.preloader-1 .line-9 { animation-delay: 800ms; }
+
+
+@keyframes opacity-2 { 
+  0% { 
+    opacity: 1;
+    height: 15px;
+  }
+  50% { 
+    opacity: 0;
+    height: 12px;
+  }
+  100% { 
+    opacity: 1;
+    height: 15px;
+  }  
+}
 .nav1{
     background-color: rgba(119, 119, 119, 0.8);
     padding: 5px;
@@ -152,7 +192,7 @@ a {
     background-color: transparent;
 }
 
-.nav1 .logo{
+.nav1 #logo{
     display: block;
     left: 50%;
     position: absolute;
@@ -223,6 +263,15 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
 }
+.content-wrapper .add-list{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    color:var(--link-color);
+}
+.content-wrapper .add-list:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
 .content-wrapper .list .title{
     color: #333333;
     width: 266px;
@@ -266,6 +315,7 @@ a {
     padding-top: 2px;
     padding-left: 8px;
     position: relative;
+    cursor: pointer;
 } 
 
 .content-wrapper .list .cards .card:hover{
@@ -291,7 +341,7 @@ a {
 
 .content-wrapper .list .cards .card hr{
     display: inline-block;    
-    height:10px;
+    height:9px;
     border: 0;
     width: 45px;
     border-radius: 5px;
@@ -333,4 +383,139 @@ a {
 .content-wrapper .list .add-card a:hover{
     background-color: #D9DCE2;
     color: #333333;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    min-height: 200px;
+    width: 70%;
+    padding:10px;
+  }
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+  }
+.close {
+    color: #aaaaaa;
+    float: right;
+    padding: 0 10px;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 50%;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    background-color: var(--list);
+    cursor: pointer;
+  }
+
+  .modal-content .icon i{
+      margin-left: 5px;
+      margin-right: 15px;
+  }
+  .modal-content h3{
+      margin: 8px 0;
+      font-size: 20px;
+  }
+
+  .modal-content .data {
+      margin-left: 45px;
+  }
+  .modal-content p {
+      font-size: 14px;
+      color:var(--nav1);
+  }
+
+  .modal-content p a{      
+    color:var(--nav1);
+      text-decoration: underline;
+  }
+
+  .modal-content .members .memInline ,.modal-content .labels .labelInline{
+      display:inline-block;
+      margin-right: 5px;
+  }
+
+  .modal-content .mem-label  p{
+      font-weight: 100;
+      text-transform: uppercase;
+      color:var(--nav1);
+      font-size: 0.9em;
+      letter-spacing: 0.05em;
+  }
+
+  .modal-content .avatar {
+      font-size: 15px;
+      font-weight: 900;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding:3px;
+      text-align: center;
+      border-radius: 50%;      
+        width: 28px;
+        height: 28px;
+      background-color: var(--logo);
+  }
+
+  .modal-content .members .memInline .addMem{
+      color:#777777;
+    background-color: var(--list); 
+  }
+  .modal-content .avatar:hover{
+      background-color: var(--nav1);
+      cursor: pointer;
+  }
+  .modal-content .members .memInline .addMem:hover{
+      cursor: pointer;
+      background-color: var(--logo);
+  }
+
+  .modal-content .mem-label {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+  }
+  .modal-content .mem-label .mem{
+    margin-right: 50px;
+  }
+
+  .modal-content .labels .lab{
+    border-radius: 3px;
+    height: 28px;
+    padding: 3px 10px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--link-color);
+  }
+
+  .modal-content .labels .addLab{
+      text-align: center;      
+      color:#777777;
+      width: 15px;
+      height: 28px;
+      border-radius: 3px;
+      background-color: var(--list);
+  }
+  .modal-content .labels .lab:hover{
+      opacity: 85%;
+      cursor: pointer;
+  }
+  .modal-content .labels .addLab:hover{
+      color:#111111;
+      background-color: var(--logo);
 }
