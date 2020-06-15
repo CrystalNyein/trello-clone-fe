@@ -390,9 +390,11 @@ a {
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
-    min-height: 200px;
-    width: 70%;
+    min-height: 850px;
+    width: 60%;
+    background-color: var(--card-hover);
     padding:10px;
+    position: relative;
   }
   .modal {
     display: none; 
@@ -424,11 +426,12 @@ a {
 
   .modal-content .icon i{
       margin-left: 5px;
-      margin-right: 15px;
+      margin-right: 18px;
   }
   .modal-content h3{
       margin: 8px 0;
       font-size: 20px;
+      color:#333333;
   }
 
   .modal-content .data {
@@ -457,7 +460,7 @@ a {
       letter-spacing: 0.05em;
   }
 
-  .modal-content .avatar {
+  .modal-content .members .avatar {
       font-size: 15px;
       font-weight: 900;
       display: flex;
@@ -485,6 +488,7 @@ a {
   }
 
   .modal-content .mem-label {
+      width: 64%;
       display: flex;
       flex-direction: row;
       justify-content: start;
@@ -494,6 +498,7 @@ a {
   }
 
   .modal-content .labels .lab{
+      min-width: 30px;
     border-radius: 3px;
     height: 28px;
     padding: 3px 10px;    
@@ -518,4 +523,894 @@ a {
   .modal-content .labels .addLab:hover{
       color:#111111;
       background-color: var(--logo);
+}
+
+.modal-content .desc{
+    margin: 20px 0;
+    width: 70%;
+}
+
+.modal-content .desc a{
+    font-size: 15px;
+    margin-left: 10px;
+    padding:6px 10px;
+    border-radius: 3px;
+    background-color: #ebebec;
+    color:var(--nav1);
+    font-weight: 400;
+}
+
+.modal-content .desc a:hover{
+    background-color: var(--list);
+    color:#111;
+}
+.modal-content .desc p {
+    font-size: 15px;
+    color:#555555;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-content .desc textarea{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 87%;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid transparent;
+    background-color: var(--list);
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+    cursor: pointer;
+}
+
+.modal-content .desc textarea:hover{
+    background-color: #d4dddb;
+}
+
+.modal-content .desc textarea:focus{
+    height: 80px;
+    background-color: white;
+    border-color: rgb(44, 44, 187);
+}
+
+.modal-content .desc .desc-func{
+    display: none;
+    margin-top: 10px;
+}
+
+.modal-content .desc .desc-save{
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    background-color: rgba(47, 194, 47,1);
+    margin-right: 20px;
+    color: var(--card);
+    cursor: pointer;
+}
+
+.modal-content .desc .desc-save:hover{
+    background-color: rgba(47, 194, 47,0.8);
+}
+.modal-content .desc .desc-cross{
+    display: inline-block;
+    color:#555555;
+    font-weight: 300;
+}
+.modal-content .desc .desc-cross i{
+    line-height: 36.67px;
+}
+.modal-content .desc .desc-cross:hover{
+    color:#111111;
+}
+/* The check */
+.modal-content .checklist{
+    width: 70%;
+}
+.modal-content .check {
+  display: block;
+  position: relative;
+  padding:10px ;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #333333;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.modal-content .check .item{
+    background-color: transparent;
+    border: none;
+    color: var(--nav1);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    margin-left: 40px;
+    height: 20px;
+    outline: none;
+    width: 90%;
+    font-size: 15px;
+}
+
+.check .item:focus {
+    height: 70px;
+    color:#333333;
+    background-color: #dddddd;
+    border-radius: 3px;
+    border: 1px solid var(--logo);
+}
+
+/* Hide the browser's default checkbox */
+.check .checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  z-index: 1;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border: 1.5px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* On mouse-over, add a grey background color */
+.check:hover {
+    background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check .checkbox:checked ~ .checkmark {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check .checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.modal-content .checklist .check-func{
+    display: none;
+    margin-top: 10px;
+}
+
+.modal-content .checklist .check-save{
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    background-color: rgba(47, 194, 47,1);
+    margin-left: 0;
+    margin-right: 20px;
+    color: var(--card);
+}
+
+.modal-content .checklist .check-save:hover{
+    background-color: rgba(47, 194, 47,0.8);
+    cursor: pointer;
+}
+.modal-content .checklist .check-cross{
+    display: inline-block;
+    color:#555555;
+    font-weight: 300;
+    padding: 0 10px;
+}
+.modal-content .checklist .check-cross i{
+    line-height: 36.67px;
+}
+.modal-content .checklist .check-cross:hover{
+    color:#111111;
+}
+.modal-content .activity .comment-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modal-content .activity{
+    width: 65%;
+    margin-bottom: 20px;
+}
+
+.modal-content .activity .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modal-content .activity .title .detail{
+    color:var(--nav1);
+    background-color: var(--list);
+    height: 20px;
+    padding: 8px ;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.modal-content .activity .title .detail:hover{
+    background-color: #e1e4e4;
+    color: #333333;
+}
+
+.modal-content .activity .avatar{
+    border: none;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    vertical-align: top;
+}
+
+
+.modal-content .activity .comment{
+    display: inline-block;
+    width: 88%;
+    margin-left: 13px;
+    padding-right: 20px;
+    height: 38.667px;
+    border-radius: 3px;
+    border: 1px solid var(--logo);
+    background-color:var(--card);
+}
+.modal-content .activity input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+    background-color:var(--card);
+}
+
+.modal-content .activity .comment:hover{
+    border-bottom: 1px solid var(--nav1);
+}
+.modal-content .activity .func{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.modal-content .activity .func p{
+    border-radius: 3px;
+    padding: 8px 10px;
+    background-color: rgba(47, 194, 47,1);
+    color:var(--link-color);
+    cursor: pointer;
+    font-size: 15px;
+    z-index: 1;
+    display: inline-block;
+}
+
+.modal-content .activity .func p:hover{
+    background-color: rgba(47, 194, 47,0.8);
+    
+}
+.modal-content .activity .func .add-on i{
+    padding: 10px;
+    border-radius: 3px;
+}
+.modal-content .activity .func .add-on i:hover{
+    background-color: var(--list);
+}
+
+.modal-content .activity .func-save .comment-cross{
+    display: inline-block;
+    color:#555555;
+    font-weight: 300;
+    padding: 0 10px;
+}
+.modal-content .activity .func-save .comment-cross i{
+    line-height: 36.67px;
+}
+.modal-content .activity .func-save .comment-cross:hover{
+    color:#111111;
+}
+.modal-content .activity{
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.modal-content .aside{
+    position: absolute;
+    right: 0;
+    top:50px;
+    width: 29%;
+}
+.modal-content .aside a{
+    display: block;
+    color:#555555;
+    background-color: var(--list);
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin: 5px 15px;
+}
+
+.modal-content .aside h5{
+    padding-left: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    color:var(--nav1);
+}
+.modal-content .aside hr{
+    display: block;    
+    height:1.5px;
+    border: none;
+    background-color: var(--list);
+    margin: 0 15px;
+    width: 165px;
+}
+.modal-content .aside a:hover{
+    background-color: #e1e4e4;
+}
+#memberModal,#labelModal,#checklistModal,#dueDateModal,#attachmentModal,#coverModal,#moveCardModal,#copyCardModal,#shareModal{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 0; 
+    padding: 5px;
+    left: 63.1vw;
+    top:185px;
+    width:300px; 
+    height:200px; 
+    border-radius: 4px;
+    overflow: auto; 
+    border-left: 0.5px solid var(--list);
+    background-color: var(--link-color); 
+  }
+  .content .close{
+      font-size: 22px;
+      padding: 1px 10px;
+  }
+  .content .close:hover{
+      background-color: transparent;
+  }
+  .content h3{
+      padding: 5px 0;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--nav1);
+  }
+
+  .content hr{
+      display: block;
+    background-color: var(--list);
+    height: 1px;
+    border: none;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .content input,.copyCard-content textarea{
+      display: block;
+      width: 87%;
+      padding:8px 10px;
+      border: 2px solid #D9DCE2;
+      border-radius: 3px;
+      margin: 10px auto;
+    background-color: var(--card);
+    color: var(--nav1);
+    outline: none;
+    font-size: 14px;
+  }
+  .content input:hover,.copyCard-content textarea:hover{
+      background-color: var(--list);
+  }
+
+.content input:focus,.copyCard-content textarea:focus{
+    background-color: var(--link-color);
+    border-color: #2196F3;
+}
+.content >p{
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 8px 0;    
+    margin-left: 10px;
+    letter-spacing: 0.05em;
+    color:var(--links);
+}
+
+.mem-content .avatar{
+    background-color: var(--logo);
+    display: inline;
+    padding: 6px 8px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.mem-content .members{
+    margin-left: 7px;
+}
+.mem-content .avatar:hover{
+    background-color: var(--links);
+}
+#labelModal{
+    top:45px;
+    height: 370px;
+    min-height: 300px;
+    max-height: 540px;
+}
+.label-content .labelsInModal{
+    width: 90%;
+    margin: 0 auto;
+}
+.label-content .labelInModal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.label-content .labelInModal p{
+    width: 73%;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    margin-left: 0;
+    border-radius: 3px;
+    color:var(--card);
+    cursor: pointer;
+    position: relative;
+}
+.label-content .labelInModal p:hover .darken{
+    position: absolute;
+    width: 10px;
+    height: 30.667px;
+    border-radius: 3px 0 0 3px  ;
+    top:0;
+    left: 0;
+    opacity: 0.5;
+    background-color: black;
+    z-index: 1;
+}
+.label-content .labelInModal p:hover{
+    margin-left: -5px;
+    padding-left: 13px;
+    padding-right: 12px;
+}
+.label-content .labelInModal i{
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+.label-content .labelInModal i:hover{
+    background-color: var(--list);
+}
+
+.content .long-btn{
+    cursor: pointer;
+    background-color: var(--list);
+    margin: 15px 10px;
+    border-radius: 4px;
+    padding: 7px 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--nav1);   
+}
+.label-content .long-btn:hover{
+    background-color: #dddddd;
+}
+
+/* checkList */
+#checklistModal{
+    top:270px;
+    height: 220px;
+}
+.checklist-content .input-label{
+    color:#758282;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: none;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.checklist-content input{
+    margin-top: 5px;
+}
+
+.checklist-content select,.dueDate-content select{
+    width: 95%;
+    margin: 5px auto;
+    display: block;
+    padding: 2px;
+}
+.content .btn{
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    background-color: rgba(47, 194, 47,1);
+    color: var(--card);   
+    cursor: pointer;
+    width: 80px;
+    margin-left: 7px;
+    border: none;
+    margin-top: 15px;
+}
+
+.content .btn:hover{
+    background-color: rgba(47, 194, 47,0.8);
+}
+
+/* due date */
+#dueDateModal{
+    height: 330px;
+}
+.content >.input-title{
+    margin-bottom: 0;
+    color: #333333;
+    font-weight: 600;
+    text-transform: none;
+}
+.dueDate-content .warning{
+    text-transform: none;
+    color: #777777;
+    letter-spacing: unset;
+    font-size: 15px;
+    line-height: 20px;
+}
+.dueDate-content >input{
+    margin-top: 5px;
+}
+.dueDate-content .func{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    margin: 10px auto;
+}
+.dueDate-content .func >input{
+    margin: 0;
+}
+.dueDate-content .func .remove{
+    background-color: rgba(199,30,40,1);
+}
+
+.dueDate-content .func .remove:hover{    
+    background-color: rgba(199,30,40,0.8);
+}
+
+/* attachment modal */
+#attachmentModal{
+    top:40px;
+    height: 480px;
+    padding: 0;
+}
+
+.attachment-content hr{
+    width: 93%;
+}
+
+.attachment-content .input-title{
+    margin:10px;
+}
+.attachment-content input{
+    width: 85%;
+}
+
+.content .link{
+    color:#333333;
+    text-transform: none;
+    letter-spacing: unset;
+    cursor: pointer;
+    padding: 7px 10px;
+    margin: 5px 0;
+    font-size: 15px;
+
+}
+
+.content .link:hover{
+    background-color: var(--list);
+}
+.attachment-content .btn{
+    background-color: var(--card-hover);
+    color:#333333;
+    margin-top: 0;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.attachment-content .btn:hover{
+    background-color: var(--list);    
+}
+
+.content .tips{
+    text-transform: none;
+    font-size: 14px;
+    color: #777777;
+    letter-spacing: unset;
+    margin-left: 10px;
+}
+
+.attachment-content .tips a{
+    color: #777777;
+    text-decoration: underline;
+}
+
+/* cover modal */
+#coverModal{
+    height: 550px;
+    top:40px;
+}
+.cover-content p{
+    margin-bottom: 5px;
+}
+.cover-content .size{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cover-content .size i{
+    font-size: 100px;
+    font-weight: 100;
+    color: var(--nav1);
+}
+
+.cover-content .color{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.cover-content .color div{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    border-radius: 3px;
+    margin: 5px;
+    opacity: 0.8;
+}
+
+.cover-content .color div:hover{
+    opacity: 1 ;
+}
+.cover-content .long-btn{
+    color: #555555;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.cover-content .long-btn:last-child{
+    margin-bottom: 10px;
+}
+.cover-content .long-btn:hover{
+    background-color: #d4dddb;
+}
+.cover-content .tips{
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.cover-content .unsplash{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0 auto;
+}
+.cover-content .unsplash img{
+    border-radius: 3px;
+    width: 100%;
+}
+.cover-content .unsplash .flex{
+    width: 120px;
+    margin:0 5px;
+    margin-bottom: 5px;
+    z-index: 1;
+}
+
+/* move card modal */
+
+#moveCardModal{
+    top:260px;
+    height: 240px;
+}
+.content .block{
+    background-color: var(--card-hover);
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.content .block p:first-child{
+    color:var(--nav1);
+    font-size: 14px;
+}
+
+.content .block p:last-child{
+    color:#333333;
+}
+.content .list{
+    display: inline-block;
+    width: 55%;
+    margin-right: 5px;
+}
+.content .pos{
+    display: inline-block;
+    margin-left: 5px;
+    width: 20.23%;
+}
+/* copy card modal */
+
+#copyCardModal{
+    min-height: 240px;
+    max-height: 480px;
+    height: 480px;
+    top:100px;
+}
+/* The container */
+.copyCard-content .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #333333;
+    font-size: 15px;
+  }
+  /* Hide the browser's default checkbox */
+  .copyCard-content .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .copyCard-content .checkmark {
+    position: absolute;
+    border: none;
+    top: 0;
+    left: 10px;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .copyCard-content .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .copyCard-content .container input:checked ~ .checkmark {
+    background-color: #2376b9;
+  }
+  .copyCard-content .container:hover input:checked ~ .checkmark {
+      background-color: #2e8ad6;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .copyCard-content .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .copyCard-content .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .copyCard-content .container .checkmark:after {
+    left: 6.5px;
+    top: 4px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .copyCard-content .btn{
+      width: 90px;
+  }
+  .copyCard-content textarea{
+      color:#333333;
+  }
+  /* Share Modal */
+  #shareModal{
+      height: 430px;
+    top:100px;
+  }
+  .share-content p i{
+      color:yellow;
+  }
+
+  .share-content .footer{
+    font-size: 14px;
+    color:#555555;
+    text-transform: none;
+    letter-spacing: unset;
+    line-height: 20px;
+  }
+  .share-content .footer a{
+      color:#555555;
+      text-decoration: underline;
+  }
+  /* search modal */
+#searchModal{
+    display: none;
+    position: fixed;
+    top:52px;
+    left:178px;
+    width: 500px;
+    height: 130px;
+    border-radius: 3px;
+    background-color:var(--card);
+    padding: 10px;
+}
+.search-content hr{
+    background-color: var(--nav1);
+    width: 100%;
+}
+.search-content .footer{
+    margin: 10px;
+    display: flex;
+}
+.search-content .footer > *{
+    display: inline-block;
+}
+.search-content .footer p{
+    margin-left: 5px;
+    color:var(--nav1);
+    font-size: 15px;
+}
+.search-content .footer .btn{
+    width: 142px;
+    margin-top: 0;
+    background-color: var(--card-hover);
+    color:#333333;
+}
+.search-content .footer .btn:hover{
+    background-color: var(--list);
 }
